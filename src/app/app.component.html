@@ -1,0 +1,63 @@
+<router-outlet>
+  <!--  route outlet acts as a placeholder
+        that angular fills based on the current router state
+        (See the angular 'routing tutorial')
+
+        Thing I don't understand:
+          - Crisis Centers
+          - Routing
+          - ng-components
+          - password vaildation on the front end (excluding hash key comps)
+          - general angular components
+          - Typescript in general (as well as vanilla JS / ECMAscript)
+  -->
+</router-outlet>
+<h1>Credit to:</h1>
+<p>
+  Azhar Husain and his reactive form validation tutorial: <br>
+  <a href="https://github.com/AzharHusain/reactive-form-custom-validation">https://github.com/AzharHusain/reactive-form-custom-validation</a>
+  <br><a href="https://youtu.be/QYwSI1ULjOM">(Tutorial)</a>
+</p>
+    <h3>Email and Password Validation:</h3>
+      <!--Login Form-->
+      <form [formGroup]="form">
+
+        <div class="form-group">
+          <label for="emailInput">Email Address: </label>
+          <input formControlName="email" type="text" class="form-control" id="emailInput" placeholder="Enter Email">
+        </div>
+
+        <div class="form-group">
+          <label for="passwordInput">Password: </label>
+          <input formControlName="password" type="text" class="form-control" id="passwordInput" placeholder="Enter Password">
+        </div>
+
+      </form>
+
+      <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+
+      <div class="validation" *ngIf="form.touched"> <!--Regex and custom validation logic-->
+        <span>
+          <i class="fa fa-check-circle" style="color:green;" *ngIf="form.controls.email.valid"></i>
+          <i class="fa fa-check-circle" style="color:red;" *ngIf="form.controls.email.invalid"></i>
+        </span>
+      </div>
+
+  <p>
+    Please Note: I have no experience with Angular or VanillaJS,<br>
+    so the working portions of the code are primarily sourced from the linked tutorial<br>
+    and various StackOverflow threads covering the same topics<br>
+    Things I am not currently capable of in this assignment: <br>
+  </p>
+  <ul>
+    <li>Importing and using the CSS in the app comonent html file (for valid / invalid checks)</li>
+    <li>Returning a message to the user when an input is invalid</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <br><br>
